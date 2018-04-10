@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('violations', 'ViolationController@index')->middleware('auth');
+Route::resource('violations', 'ViolationController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
